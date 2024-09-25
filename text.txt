@@ -1,0 +1,13 @@
+    // const { name, email, phone, address, productQuantity, totalPrice } = payload
+
+    // const finalOrderData = new Order({
+    //     // name, email, phone, address, productQuantity, totalPrice,
+    //     // name:payload.name,
+    //     // email:payload.email,
+    //     // phone:payload.phone,
+    //     // address:payload.address,
+    //     // status: 'pending',
+    //     // paymentStatus: 'pending',
+    //     // transactionId: ''
+    // })
+    // const result = await finalOrderData.save()
