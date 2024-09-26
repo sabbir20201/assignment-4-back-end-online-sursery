@@ -9,13 +9,32 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductServices = exports.createAProductInToDB = void 0;
+exports.ProductServices = void 0;
 const product_model_1 = require("./product.model");
 const createAProductInToDB = (payload) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield product_model_1.Product.create(payload);
     return result;
 });
-exports.createAProductInToDB = createAProductInToDB;
+const findAProductByIdFromDB = (payload) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.findOne({ _id: payload });
+    return result;
+});
+const findAProductByIdAndUpdate = (id, updatedData) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.findByIdAndUpdate(id, updatedData, { new: true });
+    return result;
+});
+const getAllProductFromDB = () => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.find({ isDeleted: false });
+    return result;
+});
+const deleteAProductFromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield product_model_1.Product.findByIdAndUpdate(id, { isDeleted: true }, { new: true });
+    return result;
+});
 exports.ProductServices = {
-    createAProductInToDB: exports.createAProductInToDB
+    createAProductInToDB,
+    getAllProductFromDB,
+    findAProductByIdFromDB,
+    deleteAProductFromDB,
+    findAProductByIdAndUpdate
 };

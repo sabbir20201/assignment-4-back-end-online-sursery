@@ -5,7 +5,7 @@ const mongoose_1 = require("mongoose");
 const productSchema = new mongoose_1.Schema({
     image: {
         type: String,
-        required: true
+        required: true,
     },
     title: {
         type: String,
@@ -16,16 +16,25 @@ const productSchema = new mongoose_1.Schema({
         required: true,
     },
     price: {
-        type: String,
+        type: Number,
         required: true,
     },
     rating: {
-        type: String,
+        type: Number,
         required: true
     },
     category: {
         type: String,
         required: true,
+    },
+    availableQuantity: {
+        type: String,
+        required: true,
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+        required: false
     }
 });
 exports.Product = (0, mongoose_1.model)('Product', productSchema);
