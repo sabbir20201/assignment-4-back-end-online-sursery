@@ -4,8 +4,8 @@ import { TProduct } from "./product.interface";
 const productSchema = new Schema<TProduct>({
     image: {
         type: String,
-        required: true,
-
+        // required: false,
+        default: false
     },
     title: {
         type: String,
@@ -24,6 +24,10 @@ const productSchema = new Schema<TProduct>({
         required: true
     },
     category: {
+        type:String,
+        required: true,
+    },
+    availableQuantity: {
         type:String,
         required: true,
     },
